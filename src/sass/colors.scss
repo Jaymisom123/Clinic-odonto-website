@@ -1,0 +1,65 @@
+// Paleta Rosa e Branco Moderna - Ferreira Matos Odontologia
+:root {
+    /* Paleta Rosa e Branco Moderna */
+    --color1: #fef7f0;          /* Rosa muito claro - fundo suave */
+    --color2: #f8d7da;          /* Rosa claro - detalhes delicados */
+    --color3: #f1aeb5;          /* Rosa médio - elementos secundários */
+    --color4: #A42875;          /* Rosa vibrante - destaques principais */
+    --color5: #d63384;          /* Rosa forte - acentos importantes */
+    
+    /* Cores principais do tema */
+    --primary-color: #A42875;    /* Rosa principal */
+    --secondary-color: #d63384;  /* Rosa secundário */
+    --accent-color: #f1aeb5;     /* Rosa suave para acentos */
+    --text-primary: #495057;     /* Cinza escuro para texto principal */
+    --text-secondary: #6c757d;   /* Cinza médio para texto secundário */
+    --text-light: #adb5bd;       /* Cinza claro para texto auxiliar */
+    
+    /* Backgrounds */
+    --bg-light: #fef7f0;         /* Fundo principal claro */
+    --bg-white: #ffffff;         /* Branco puro */
+    --bg-soft: #f8f9fa;          /* Branco levemente acinzentado */
+    --bg-pink-light: #fff5f7;    /* Fundo rosa muito suave */
+    
+    /* Bordas e elementos */
+    --border-color: #f8d7da;     /* Borda rosa suave */
+    --border-light: #e9ecef;     /* Borda cinza clara */
+    
+    /* Estados e feedback */
+    --success-color: #20c997;    /* Verde suave para sucesso */
+    --warning-color: #fd7e14;    /* Laranja para avisos */
+    --error-color: #dc3545;      /* Vermelho para erros */
+    
+    /* Específicos do tema odontológico */
+    --tooth-color: #f1aeb5;      /* Rosa médio para ícones de dente */
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --gradient-soft: linear-gradient(135deg, var(--bg-light), var(--bg-pink-light));
+    --gradient-card: linear-gradient(135deg, var(--bg-white), var(--bg-soft));
+    
+    /* Sombras com tons rosados */
+    --shadow-light: 0 2px 10px rgba(164, 40, 117, 0.08);
+    --shadow-medium: 0 4px 20px rgba(164, 40, 117, 0.12);
+    --shadow-strong: 0 8px 30px rgba(164, 40, 117, 0.16);
+}
+
+// Variáveis SCSS compatíveis (mantendo nomes antigos para não quebrar)
+$color-blue: #A42875;        // Rosa principal (substitui o azul)
+$color-black: #495057;       // Cinza escuro para texto
+$color-white: #ffffff;       // Branco puro
+$color-gray: #6c757d;        // Cinza médio
+
+// Novas variáveis específicas da paleta rosa
+$color-pink-primary: #A42875;    
+$color-pink-secondary: #d63384; 
+$color-pink-accent: #f1aeb5;       
+$color-pink-light: #f8d7da;             
+$color-pink-very-light: #fef7f0;
+
+// Backgrounds
+$bg-section: var(--bg-pink-light);        // Fundo rosa muito suave para seções
+$bg-card: var(--bg-white);               // Branco para cards
+$bg-soft: var(--bg-soft);                // Branco levemente acinzentado
+
+// Bordas
+$border-primary: var(--border-color);     // Borda rosa suave
+$border-light: var(--border-light);      // Borda cinza clara

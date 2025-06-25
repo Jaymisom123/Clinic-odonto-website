@@ -1,6 +1,5 @@
 import React from 'react';
 import { AiFillHome } from "react-icons/ai";
-import ContactForm from '../../components/ContactForm/ContactForm';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import './Appointment.scss';
 
@@ -11,25 +10,48 @@ const Appointment = () => {
     return (
         <section className='appointment-section pb-70' data-aos="fade-up" data-aos-duration="2000">
             <div className="container">
-                <div className="row align-items-center">
-                    <div className="col-lg-5 col-md-6">
+                <div className="row justify-content-center">
+                    <div className="col-lg-8 col-md-8">
+                        <div className="appointment-info-area text-center">
+                            <SectionTitle 
+                            subTitle="NOSSAS UNIDADES"
+                            title="Visite uma de nossas clínicas em Catalão - GO"
+                            description="Temos duas unidades estrategicamente localizadas para melhor atendê-lo. Entre em contato pelos telefones ou WhatsApp para agendar sua consulta."
+                            />
+                            
+                            <div className="contact-info mt-5">
+                                <div className="row">
+                                    <div className="col-md-6 mb-4">
+                                        <div className="unit-info">
+                                            <h4>📍 Unidade Centro</h4>
+                                            <p><strong>Endereço:</strong><br/>Av. José Marcelino, 168 – Catalão-GO</p>
+                                            <p><strong>Telefone:</strong><br/>(64) 99955-3163</p>
+                                            <p><strong>Email:</strong><br/>ferreiraematosodonto@hotmail.com</p>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6 mb-4">
+                                        <div className="unit-info">
+                                            <h4>📍 Unidade Nossa Senhora de Fátima</h4>
+                                            <p><strong>Endereço:</strong><br/>Rua Frederico Campos, 780 – Catalão-GO</p>
+                                            <p><strong>Telefone:</strong><br/>(64) 98145-7994</p>
+                                            <p><strong>Email:</strong><br/>ferreiramatosodontologia@hotmail.com</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div className="row justify-content-center mt-5">
+                    <div className="col-lg-10">
                         <div className="google-map">
                             <iframe title='map' src={mapLink}></iframe>
 
                             <div className="location-name">
                                 <AiFillHome />
-                                <p>Av. José Marcelino, 168 – Catalão-GO</p>
+                                <p>Catalão - GO</p>
                             </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-7 col-md-6">
-                        <div className="appointment-form-area">
-                            <SectionTitle 
-                            subTitle="AGENDAR CONSULTA"
-                            title="Cuidado na Ferreira Matos é prazer"
-                            description="Atendimento acolhedor com confiança, empatia e respeito. Clareza na explicação dos procedimentos e tratamento centrado no paciente."/>
-
-                            <ContactForm />
                         </div>
                     </div>
                 </div>

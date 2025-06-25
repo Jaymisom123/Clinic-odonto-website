@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import bannerImg from '../../assets/banner/1.png';
 import doctorImg from '../../assets/banner/doctor.png';
 import icon from '../../assets/banner/icons/Calling.png';
@@ -25,7 +24,7 @@ const Banner = () => {
 
                                     <div className="banner-bottom">
                                         <div className="theme-btn">
-                                            <Link to="/contact">Agendar Consulta</Link>
+                                            <a href="https://wa.me/556499606045" target="_blank" rel="noopener noreferrer">Agendar Consulta</a>
                                         </div>
 
                                         <div className="banner-call">

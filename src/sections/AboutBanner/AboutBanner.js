@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import bannerOne from '../../assets/about/banner/banner_1.png';
 import bannerTwo from '../../assets/about/banner/banner_2.png';
 import pattern from '../../assets/banner/pattern.png';
@@ -18,7 +17,7 @@ const AboutBanner = () => {
                                     <p>Ir ao dentista não precisa ser sinônimo de medo ou desconforto. Nós somos profissionais acolhedores, que transformam a experiência do consultório odontológico em algo leve, respeitoso e até prazeroso.</p>
 
                                     <div className="theme-btn">
-                                        <Link to='/contact'>Entre em Contato</Link>
+                                        <a href='https://wa.me/556499606045' target="_blank" rel="noopener noreferrer">Entre em Contato</a>
                                     </div>
                                 </div>
                             </div>

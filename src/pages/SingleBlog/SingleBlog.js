@@ -9,7 +9,7 @@ const SingleBlog = () => {
 
     const {url} = useParams();
     const blog = BlogData.find(blog => blog.url === url);
-    const {title, img} = blog;
+    const {title, img, category} = blog;
 
     return (
         <>
@@ -20,45 +20,45 @@ const SingleBlog = () => {
                         <div className="col-lg-9">
                                 <main className="single-blog-area">
                                 <p className="single-blog-category">
-                                    TECHNOLOGY
+                                    {category}
                                 </p>
                                 <h2 className="single-blog-title">{title}</h2>
                                 <img className='single-blog-banner' src={img} alt="blog banner"/>
-                                <p className="single-blog-text">The paper discusses the use of epoxy resins in construction and repair of offshore concrete structures. Typical properties of resin systems are described, and the range of conditions encountered in practice and the development of a wide range of epoxy systems for a variety of applications are discussed. Several applications such as surface and underwater repairs, and the use of epoxy resins as curing membranes, and to seal cracks and joints are described in detail. It is shown that careful selection of materials and good quality of workmanship are essential to derive the maximum benefit from the use of epoxy systems. A wide range of properties could be obtained from epoxies to suit the requirements of the designer and the contractor.
+                                <p className="single-blog-text">A odontologia moderna tem passado por uma revolução tecnológica sem precedentes. Novas tecnologias estão transformando a forma como os tratamentos dentários são realizados, proporcionando maior precisão, conforto e resultados mais eficazes para os pacientes.
 
-                                To this day, it's not entirely clear which seven lines the article referenced. The prevailing theory is that it's the roughly seven lines of curl it took to create a Charge. However, a search for the seven lines of code ultimately misses the point: the ability to open up a terminal, run this curl snippet, then immediately see a successful credit card payment felt like seven lines of code. It's unlikely that a developer believed a production-ready payments integration involved literally only seven lines of code. But taking something as complex as credit card processing and reducing.</p>
+                                Na Ferreira Matos Odontologia, estamos sempre atualizados com as mais recentes inovações do setor. Utilizamos equipamentos de última geração para diagnósticos mais precisos e tratamentos menos invasivos. Isso significa menos desconforto para o paciente e tempos de recuperação mais rápidos.</p>
 
-                                <p className='single-blog-text'>A few years ago, Bloomberg Businessweek published a feature story on Stripe. Four words spanned the center of the cover: "seven lines of code," suggesting that's all it took for a business to power payments on Stripe. The assertion was bold—and became a theme and meme for us.
+                                <p className='single-blog-text'>A prevenção continua sendo a melhor medicina quando se trata de saúde bucal. Consultas regulares ao dentista, limpezas profissionais e cuidados domiciliares adequados são fundamentais para manter um sorriso saudável e bonito.
 
-                                To this day, it's not entirely clear which seven lines the article referenced. The prevailing theory is that it's the roughly seven lines of curl it took to create a Charge. However, a search for the seven lines of code ultimately misses the point: the ability to open up a terminal, run this curl snippet, then immediately see a successful credit card payment felt like seven lines of code. It's unlikely that a developer believed a production-ready payments integration involved literally only seven lines of code. But taking something as complex as credit card processing and reducing the integration to only a few lines of code that, when run, immediately returns a successful Charge object is really quite magical</p>
+                                Em nossa clínica, acreditamos que cada paciente é único e merece um atendimento personalizado. Por isso, desenvolvemos planos de tratamento individualizados que atendem às necessidades específicas de cada pessoa, considerando não apenas a saúde bucal, mas também o bem-estar geral do paciente.</p>
 
-                                <blockquote className='single-post-quote'>" Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor "</blockquote>
+                                <blockquote className='single-post-quote'>"O sorriso é a curva mais bonita do corpo humano. Na Ferreira Matos Odontologia, nosso compromisso é cuidar do seu sorriso com carinho, técnica e dedicação."</blockquote>
 
-                                <p className="single-blog-text">The paper discusses the use of epoxy resins in construction and repair of offshore concrete structures. Typical properties of resin systems are described, and the range of conditions encountered in practice and the development of a wide range of epoxy systems for a variety of applications are discussed. Several applications such as surface and underwater repairs, and the use of epoxy resins as curing membranes, and to seal cracks and joints are described in detail. It is shown that careful selection of materials and good quality of workmanship are essential to derive the maximum benefit from the use of epoxy systems. A wide range of properties could be obtained from epoxies to suit the requirements of the designer and the contractor.
+                                <p className="single-blog-text">Os avanços em implantodontia têm permitido devolver a função mastigatória e a estética do sorriso para pacientes que perderam dentes. Com técnicas modernas e materiais biocompatíveis, os implantes dentários se tornaram uma solução duradoura e natural.
 
-                                To this day, it's not entirely clear which seven lines the article referenced. The prevailing theory is that it's the roughly seven lines of curl it took to create a Charge. However, a search for the seven lines of code ultimately misses the point: the ability to open up a terminal, run this curl snippet, then immediately see a successful credit card payment felt like seven lines of code. It's unlikely that a developer believed a production-ready payments integration involved literally only seven lines of code. But taking something as complex as credit card processing and reducing.</p>
+                                Nosso especialista em implantodontia, Dr. Juliano Franco Rosa, utiliza as técnicas mais avançadas para garantir o sucesso dos procedimentos. Cada caso é cuidadosamente planejado utilizando tecnologia 3D para maior precisão e previsibilidade dos resultados.</p>
                             </main>
                         </div>
                         <div className="col-lg-3">
                             <div className="blog-sidebar">
                                 <div className="sidebar-subscribe mb-5">
-                                    <h3 className="sidebar-heading">Get Latest Updates</h3>
+                                    <h3 className="sidebar-heading">Receba Nossas Atualizações</h3>
                                     <form>
                                         <div className="form-group">
-                                            <input type="email" className='form-control' placeholder='Subscribe to email'/>
+                                            <input type="email" className='form-control' placeholder='Inscreva-se para receber novidades'/>
                                             <input className='btn btn-primary mt-1 w-100' type="button" value="Inscrever-se" />
                                         </div>
                                     </form>
                                 </div>
 
                                 <div className="sidebar-category mb-3">
-                                    <h3 className="sidebar-heading">Categories</h3>
+                                    <h3 className="sidebar-heading">Categorias</h3>
                                     <ul>
-                                        <li><Link href="/">Technology</Link></li>
-                                        <li><Link href="/">Root Canal</Link></li>
-                                        <li><Link href="/">Teeth</Link></li>
-                                        <li><Link href="/">Whitening</Link></li>
-                                        <li><Link href="/">Dentures</Link></li>
+                                        <li><Link to="/">Tecnologia</Link></li>
+                                        <li><Link to="/">Tratamento de Canal</Link></li>
+                                        <li><Link to="/">Implantes</Link></li>
+                                        <li><Link to="/">Clareamento</Link></li>
+                                        <li><Link to="/">Ortodontia</Link></li>
                                     </ul>
                                 </div>
                             </div>

@@ -1,0 +1,65 @@
+/* Botão Flutuante do WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+
+  .whatsapp-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #25D366; /* Cor oficial do WhatsApp */
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+      color: white;
+      text-decoration: none;
+    }
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+/* Animação de pulso para chamar atenção */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(37, 211, 102, 0.7);
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  }
+}
+
+/* Responsivo para mobile */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 15px;
+    right: 15px;
+
+    .whatsapp-button {
+      width: 55px;
+      height: 55px;
+
+      svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+}

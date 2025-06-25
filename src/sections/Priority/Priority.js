@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import priorityImg from '../../assets/about/priority.png';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import './Priority.scss';
@@ -23,7 +22,7 @@ const Priority = () => {
                             />
 
                             <div className="theme-btn">
-                                <Link to='/contact'>Agendar Consulta</Link>
+                                <a href='https://wa.me/556499606045' target="_blank" rel="noopener noreferrer">Agendar Consulta</a>
                             </div>
                         </div>
                     </div>

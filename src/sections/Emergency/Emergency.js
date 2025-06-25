@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import EmergencyImg from '../../assets/emergency.png';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import './Emergency.scss';
@@ -18,9 +17,9 @@ const Emergency = () => {
                         <div className="emergency-text">
                             <SectionTitle subTitle="Urgência Odontológica 24H" title="Tratamento gentil e amigável da nossa prática local." description="A clínica foca no atendimento acolhedor e humanizado, oferecendo um ambiente tranquilo para pacientes com traumas, medo ou necessidades especiais."/>
 
-                            <div className="theme-btn">
-                                <Link to='/'>Agendar Consulta</Link>
-                            </div>
+                                                          <div className="theme-btn">
+                                 <a href='https://wa.me/556499606045' target="_blank" rel="noopener noreferrer">Agendar Consulta</a>
+                              </div>
                         </div>
                     </div>
                 </div>

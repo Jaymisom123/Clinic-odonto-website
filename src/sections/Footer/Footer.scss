@@ -2,7 +2,7 @@
 
 
 footer {
-    background: $color-black;
+    background: var(--color4); // Rosa vibrante igual ao header
 
     .footer-logo {
         margin-bottom: 30px;

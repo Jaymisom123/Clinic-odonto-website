@@ -8,52 +8,110 @@ body {
     font-family: $body-font;
     background-color: var(--bg-white);
     padding-top: 70px;
+    line-height: 1.6;
+    font-weight: 400;
 }
+
 img {
     max-width: 100%;
+    height: auto;
+    border-radius: 0 !important;
 }
+
 p {
     color: var(--text-secondary);
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-weight: 400;
 }
+
 h1, h2, h3, h4, h5, h6 {
     color: var(--text-primary);
     margin-bottom: 0;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
 }
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+}
+
 .theme-btn {
     a {
         background: var(--gradient);
         color: var(--bg-white);
-        padding: 14px 20px;
+        padding: 16px 32px;
         text-decoration: none;
-        border-radius: 15px;
-        transition: .3s;
+        border: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         border: 1px solid transparent;
         font-size: 14px;
         font-weight: 500;
         display: inline-block;
-        box-shadow: var(--shadow-medium);
+        box-shadow: 0 4px 12px rgba(164, 40, 117, 0.25);
+        position: relative;
+        overflow: hidden;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+        min-width: fit-content;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
 
         &:hover {
             background: var(--bg-white);
             color: var(--primary-color);
             border: 1px solid var(--primary-color);
-            box-shadow: var(--shadow-strong);
+            box-shadow: 0 8px 25px rgba(164, 40, 117, 0.3);
+            transform: translateY(-2px);
+
+            &::before {
+                left: 100%;
+            }
+        }
+
+        &:active {
+            transform: translateY(0);
         }
     }
 }
+
 .section-bg {
     background: var(--gradient-soft);
 }
+
 .section-common {
-    border-radius: 48px;
     margin: 0 25px;
+    padding: 80px 0;
 }
 
 .d-table {
     width: 100%;
     height: 100%;
 }
+
 .d-table-cell {
     vertical-align: middle;
 }
@@ -61,52 +119,141 @@ h1, h2, h3, h4, h5, h6 {
 .pt-100 {
     padding-top: 100px;
 }
+
 .pb-70 {
     padding-bottom: 70px;
 }
+
+// Modern card styles
+.modern-card {
+    background: var(--bg-white);
+    border: 1px solid rgba(164, 40, 117, 0.08);
+    box-shadow: 0 2px 20px rgba(164, 40, 117, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+        box-shadow: 0 8px 40px rgba(164, 40, 117, 0.15);
+        transform: translateY(-4px);
+    }
+
+    img {
+        border-radius: 0 !important;
+    }
+}
+
+// Remove border-radius de todos os elementos
+* {
+    border-radius: 0 !important;
+}
+
+// Regras específicas para containers de imagem
+.banner-img, .service-banner-img, .about-img, .team-img, .blog-img, 
+.gallery-img, .testimonial-img, .expert-img, .priority-img, 
+.emergency-img, .features-img, .symptoms-img, .safety-img,
+.blog-featured-img, .single-blog-banner {
+    img {
+        border-radius: 0 !important;
+    }
+}
+
+// Containers de card que podem ter imagens
+.service-box, .team-card, .blog-card, .testimonial-card, 
+.features-item, .symptoms-item, .gallery-item, .blog-featured {
+    img {
+        border-radius: 0 !important;
+    }
+}
+
+// Exceção apenas para o botão WhatsApp que deve permanecer circular
+.whatsapp-btn, .whatsapp-float {
+    border-radius: 50% !important;
+    
+    * {
+        border-radius: inherit !important;
+    }
+}
+
+// Modern spacing utilities
+.spacing-sm { margin-bottom: 1rem; }
+.spacing-md { margin-bottom: 2rem; }
+.spacing-lg { margin-bottom: 3rem; }
+.spacing-xl { margin-bottom: 4rem; }
 
 // Mobile Responsive
 @media (max-width: 575px){
     .section-common {
         margin: 0 15px;
-        border-radius: 20px;
+        padding: 60px 0;
     }
 
     p {
-        font-size: 16px;
+        font-size: 15px;
+        line-height: 1.6;
     }
 
     .pt-100 {
-        padding-top: 50px;
+        padding-top: 60px;
     }
     .pb-70 {
-        padding-bottom: 20px;
+        padding-bottom: 40px;
+    }
+
+    .theme-btn a {
+        padding: 14px 20px;
+        font-size: 12px;
+        letter-spacing: 0.3px;
+    }
+
+    // Garantir que imagens em mobile também não tenham border-radius
+    img {
+        border-radius: 0 !important;
     }
 }
+
 @media (min-width: 576px) and (max-width: 767px) {
     .section-common {
-        margin: 0 15px;
-        border-radius: 20px;
+        margin: 0 20px;
+        padding: 70px 0;
     }
 
     p {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .pt-100 {
-        padding-top: 50px;
+        padding-top: 70px;
     }
     .pb-70 {
-        padding-bottom: 20px;
+        padding-bottom: 50px;
+    }
+
+    .theme-btn a {
+        padding: 15px 24px;
+        font-size: 13px;
+    }
+
+    // Garantir que imagens em tablet também não tenham border-radius
+    img {
+        border-radius: 0 !important;
     }
 }
 
 // Medium Responsive
 @media (min-width: 758px) and (max-width: 991px) {
     .pt-100 {
-        padding-top: 70px;
+        padding-top: 80px;
     }
     .pb-70 {
-        padding-bottom: 40px;
+        padding-bottom: 60px;
+    }
+
+    .theme-btn a {
+        padding: 16px 28px;
+        font-size: 13px;
+    }
+
+    // Garantir que imagens em desktop também não tenham border-radius
+    img {
+        border-radius: 0 !important;
     }
 }

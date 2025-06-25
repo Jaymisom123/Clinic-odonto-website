@@ -18,14 +18,47 @@
 
             li {
                 list-style: none;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
                 font-weight: 500;
+                display: flex;
+                align-items: center;
+                padding: 10px 0;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: translateX(5px);
+                    color: var(--primary-color);
+                }
 
                 svg {
                     color: $color-blue;
                     margin-right: 15px;
                     top: -1px;
                     position: relative;
+                    flex-shrink: 0;
+                    transition: all 0.3s ease;
+                }
+            }
+        }
+
+        .theme-btn {
+            margin-top: 40px;
+
+            a {
+                padding: 18px 40px;
+                font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                white-space: nowrap;
+                min-width: 200px;
+                text-align: center;
+                background: var(--gradient);
+                box-shadow: 0 6px 20px rgba(164, 40, 117, 0.3);
+
+                &:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 10px 30px rgba(164, 40, 117, 0.4);
                 }
             }
         }
@@ -33,47 +66,67 @@
 }
 
 .expert-img {
-        text-align: left;
-        margin-right: 60px;
-        position: relative;
-        z-index: 1;
-        margin-bottom: 30px;
+    text-align: left;
+    margin-right: 60px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
 
-        &::before {
-            position: absolute;
-            content: "";
-            width: 45%;
-            height: 125%;
-            top: -12%;
-            right: 0%;
-            background: #FADBE2;
-            z-index: -1;
-            border-radius: 20px;
+    img {
+        transition: all 0.3s ease;
+        
+        &:hover {
+            transform: scale(1.02);
         }
+    }
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: 45%;
+        height: 125%;
+        top: -12%;
+        right: 0%;
+        background: linear-gradient(135deg, #FADBE2, rgba(164, 40, 117, 0.1));
+        z-index: -1;
+        transition: all 0.3s ease;
+    }
 }
 
 // Mobile Responsive
 @media (max-width: 575px) {
     .expert-section {
-        padding: 50px 15px;
+        padding: 60px 15px;
 
         .expert-text {
             ul {
-                margin-bottom: 10px;
+                margin-bottom: 20px;
                 
                 li {
-                    margin-bottom: 8px;
+                    margin-bottom: 12px;
                     font-size: 14px;
+                    padding: 8px 0;
 
                     svg {
-                        margin-right: 5px;
+                        margin-right: 10px;
                     }
+                }
+            }
+
+            .theme-btn {
+                margin-top: 30px;
+
+                a {
+                    padding: 15px 25px;
+                    font-size: 13px;
+                    min-width: 180px;
                 }
             }
         }
 
         .expert-img {
             margin-right: 0;
+            text-align: center;
 
             &::before {
                 display: none;
@@ -84,14 +137,20 @@
 
 @media (min-width: 576px) and (max-width:767px){
     .expert-section {
-        padding: 50px 0;
+        padding: 70px 0;
 
         .expert-text {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+
+            .theme-btn a {
+                padding: 16px 32px;
+                font-size: 13px;
+            }
         }
 
         .expert-img {
             margin-right: 0px;
+            text-align: center;
 
             &::before {
                 display: none;
@@ -100,17 +159,12 @@
     }
 }
 
-// Medium Devices Responsive
-@media (min-width: 768px) and (max-width:991px){
+@media (min-width: 768px) and (max-width: 991px){
     .expert-section {
-        padding: 50px 0;
+        padding: 80px 0;
 
         .expert-img {
-            margin-right: 20px;
-
-            &::before {
-                right: -10%;
-            }
+            margin-right: 30px;
         }
     }
 }

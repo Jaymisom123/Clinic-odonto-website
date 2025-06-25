@@ -1,58 +1,136 @@
 @import '../../sass/colors.scss';
 
-.service-section {
-    .service-title-text {
-        padding-top: 50px;
-        max-width: 600px;
-        margin: 0 0 0 auto;
-        font-weight: 500;
-    }
+.services-section {
+    .services-item {
+        background: var(--bg-white);
+        text-align: center;
+        padding: 40px 30px;
+        border: 1px solid rgba(164, 40, 117, 0.08);
+        box-shadow: 0 4px 20px rgba(164, 40, 117, 0.08);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
 
-    .services-link {
-        margin: 50px 0 30px;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(164, 40, 117, 0.02), transparent);
+            transition: left 0.5s;
+        }
 
-        a {
-            color: $color-blue;
+        &:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(164, 40, 117, 0.15);
+            border-color: rgba(164, 40, 117, 0.15);
+
+            &::before {
+                left: 100%;
+            }
+
+            .services-icon {
+                transform: scale(1.05);
+            }
+
+            h3 a {
+                color: var(--primary-color);
+            }
+        }
+
+        .services-icon {
+            margin-bottom: 25px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+            img {
+                max-width: 80px;
+                transition: all 0.3s ease;
+            }
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            line-height: 1.3;
+
+            a {
+                color: var(--text-primary);
+                text-decoration: none;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    color: var(--primary-color);
+                }
+            }
+        }
+
+        p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: var(--primary-color);
             text-decoration: none;
-            font-weight: 700;
-            background: #583fbc1e;
-            padding: 15px 25px;
-            display: inline-block;
-            border-radius: 15px;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
 
-            svg {
-                margin-left: 10px;
-                font-size: 20px;
-                top: -2px;
-                position: relative;
+            &:hover {
+                color: var(--secondary-color);
+                transform: translateX(5px);
             }
         }
     }
 }
 
-//Mobile Responsive
-@media (max-width: 575px){
-    .service-section {
-        .service-title-text {
-            padding-top: 0;
-            margin-bottom: 10px;
-        }
-    }
-}
-@media (min-width: 576px) and (max-width: 767px) {
-    .service-section {
-        .service-title-text {
-            padding-top: 0;
-            margin-bottom: 30px;
+// Mobile Responsive
+@media (max-width: 575px) {
+    .services-section {
+        .services-item {
+            padding: 30px 20px;
+            margin-bottom: 20px;
+
+            .services-icon {
+                margin-bottom: 20px;
+
+                img {
+                    max-width: 60px;
+                }
+            }
+
+            h3 {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+
+            p {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
         }
     }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-    .service-section {
-        .service-title-text {
-            padding-top: 0;
-            margin-bottom: 30px;
+@media (min-width: 576px) and (max-width: 767px) {
+    .services-section {
+        .services-item {
+            padding: 35px 25px;
+
+            .services-icon img {
+                max-width: 70px;
+            }
+
+            h3 {
+                font-size: 19px;
+            }
         }
     }
 }

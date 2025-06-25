@@ -1,35 +1,105 @@
 .service-box {
-    border: 1px solid #1819451a;
-    padding: 15px;
-    border-radius: 32px;
+    border: 1px solid rgba(164, 40, 117, 0.08);
+    padding: 30px 20px;
     text-align: center;
     margin-bottom: 30px;
+    background: var(--bg-white);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(164, 40, 117, 0.06);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(164, 40, 117, 0.02), transparent);
+        transition: left 0.5s;
+    }
+
+    &:hover {
+        border-color: rgba(164, 40, 117, 0.15);
+        box-shadow: 0 8px 40px rgba(164, 40, 117, 0.12);
+        transform: translateY(-6px);
+
+        &::before {
+            left: 100%;
+        }
+
+        .icon-area {
+            transform: scale(1.05);
+        }
+
+        .service-text h3 a {
+            color: var(--primary-color);
+        }
+    }
 
     .icon-area {
-        background: #DBDEFA;
-        padding: 80px;
-        border-radius: 30px;
-        margin-bottom: 30px;
+        background: linear-gradient(135deg, #DBDEFA, #f1aeb5);
+        padding: 60px;
+        margin-bottom: 25px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            transform: translate(-50%, -50%);
+        }
 
         .icon-box {
             margin: auto;
+            position: relative;
+            z-index: 2;
         }
     }
 
     .service-text {
         h3 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            line-height: 1.3;
 
             a {
                 text-decoration: none;
-                color: #181945;
+                color: var(--text-primary);
+                transition: all 0.3s ease;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background: var(--primary-color);
+                    transition: width 0.3s ease;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                }
             }
         }
 
         p {
-            font-size: 14px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 0;
         }
     }
 }
@@ -37,8 +107,22 @@
 // Small Device Responsive
 @media (min-width: 576px) and (max-width: 767px) {
     .service-box {
+        padding: 25px 15px;
+        
         .icon-area {
-            padding: 50px;
+            padding: 45px;
+            margin-bottom: 20px;
+        }
+
+        .service-text {
+            h3 {
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+
+            p {
+                font-size: 14px;
+            }
         }
     }
 }
@@ -46,17 +130,50 @@
 // Medium Device Responsive
 @media (min-width: 768px) and (max-width: 991px) {
     .service-box {
+        padding: 25px 15px;
+        
+        .icon-area {
+            padding: 45px;
+            margin-bottom: 20px;
+        }
+
+        .service-text {
+            h3 {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+// Large Device Responsive
+@media (min-width: 992px) and (max-width: 1199px) {
+    .service-box {
         .icon-area {
             padding: 50px;
         }
     }
 }
 
-// Medium Device Responsive
-@media (min-width: 992px) and (max-width: 1199px) {
+// Extra responsive for small screens
+@media (max-width: 575px) {
     .service-box {
+        padding: 20px 15px;
+        margin-bottom: 25px;
+
         .icon-area {
-            padding: 50px;
+            padding: 40px;
+            margin-bottom: 20px;
+        }
+
+        .service-text {
+            h3 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 14px;
+            }
         }
     }
 }

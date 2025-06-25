@@ -1,53 +1,116 @@
 @import '../../sass/colors.scss';
 
 .appointment-section {
-
     .section-title {
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     }
 
-   .google-map {
+    .unit-info {
+        background: var(--bg-white);
+        padding: 30px 25px;
+        margin-bottom: 20px;
+        border: 1px solid rgba(164, 40, 117, 0.08);
+        box-shadow: 0 4px 20px rgba(164, 40, 117, 0.08);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(164, 40, 117, 0.02), transparent);
+            transition: left 0.5s;
+        }
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(164, 40, 117, 0.15);
+            border-color: rgba(164, 40, 117, 0.15);
+
+            &::before {
+                left: 100%;
+            }
+        }
+
+        h4 {
+            color: var(--primary-color);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 15px;
+            line-height: 1.6;
+
+            strong {
+                color: var(--text-primary);
+                font-weight: 600;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .google-map {
         height: 600px;
         position: relative;
         margin-bottom: 30px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(164, 40, 117, 0.1);
+        border: 1px solid rgba(164, 40, 117, 0.08);
 
         iframe {
             width: 100%;
             height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        &:hover iframe {
+            transform: scale(1.02);
         }
 
         .location-name {
             position: absolute;
-            bottom: 20px;
+            bottom: 30px;
             left: 0;
             right: 0;
-            background: $color-white;
-            padding: 15px;
-            width: 80%;
+            background: var(--bg-white);
+            padding: 20px 25px;
+            width: 85%;
             margin: auto;
             display: flex;
             align-items: center;
-            border-radius: 30px;
+            gap: 20px;
+            box-shadow: 0 8px 25px rgba(164, 40, 117, 0.15);
+            border: 1px solid rgba(164, 40, 117, 0.1);
+            backdrop-filter: blur(10px);
 
             svg {
-                background: $color-blue;
-                color: $color-white;
-                width: 60px;
+                background: var(--gradient);
+                color: var(--bg-white);
+                width: 50px;
                 height: 50px;
-                padding: 10px;
-                line-height: 50px;
-                border-radius: 15px;
-                border: 5px solid #DBDEFA;
+                padding: 12px;
+                flex-shrink: 0;
+                border: 3px solid rgba(164, 40, 117, 0.2);
             }
 
             p {
-                margin-left: 20px;
-                margin-bottom: 0;
+                margin: 0;
                 font-weight: 600;
-                color: $color-black;
+                color: var(--text-primary);
+                font-size: 16px;
             }
         }
-   }
+    }
 
     .appointment-form-area {
         padding-left: 50px;
@@ -58,34 +121,41 @@
     display: flex;
     align-items: center;
     margin-top: 20px;
+    gap: 20px;
 
     .icon {
-        width: 45px;
-        height: 45px;
-        margin-right: 30px;
-        background: $color-white;
-        line-height: 45px;
+        width: 50px;
+        height: 50px;
+        background: var(--bg-white);
+        line-height: 50px;
         text-align: center;
-        border-radius: 12px;
         position: relative;
         z-index: 1;
-        box-shadow: 0 0 5px 3px rgb(0 0 0 / 8%);
+        box-shadow: 0 4px 15px rgba(164, 40, 117, 0.15);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(164, 40, 117, 0.25);
+        }
     }
     
     .call-text {
-
         p {
-            font-size: 14px;
+            font-size: 12px;
             text-transform: uppercase;
-            color: $color-blue;
+            color: var(--primary-color);
             font-weight: 700;
             margin-bottom: 5px;
+            letter-spacing: 1px;
         }
 
         h6 {
             font-size: 18px;
             text-transform: uppercase;
             font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
         }
     }
 }
@@ -93,22 +163,118 @@
 // Mobile Responsive
 @media (max-width: 575px){
     .appointment-section {
+        .unit-info {
+            padding: 25px 20px;
+            margin-bottom: 15px;
+
+            h4 {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+
+            p {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+        }
+
+        .google-map {
+            height: 400px;
+            margin-bottom: 20px;
+
+            .location-name {
+                bottom: 20px;
+                padding: 15px 20px;
+                width: 90%;
+
+                svg {
+                    width: 40px;
+                    height: 40px;
+                    padding: 10px;
+                }
+
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+
         .appointment-form-area {
             padding-left: 0;
 
             .form-group {
-                margin-bottom: 10px;
+                margin-bottom: 15px;
 
                 label {
-                    font-size: 12px;
-                    margin-bottom: 5px;
+                    font-size: 13px;
+                    margin-bottom: 8px;
+                    font-weight: 600;
                 }
 
                 .form-control {
-                    height: 45px;
-                    border-radius: 10px;
+                    height: 50px;
+                    border: 1px solid rgba(164, 40, 117, 0.15);
+                    transition: all 0.3s ease;
+
+                    &:focus {
+                        border-color: var(--primary-color);
+                        box-shadow: 0 0 0 3px rgba(164, 40, 117, 0.1);
+                    }
                 }
             }
+        }
+    }
+
+    .appointment-call {
+        gap: 15px;
+
+        .icon {
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+        }
+
+        .call-text {
+            p {
+                font-size: 11px;
+            }
+
+            h6 {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .appointment-section {
+        .unit-info {
+            padding: 28px 22px;
+        }
+
+        .google-map {
+            height: 500px;
+
+            .location-name {
+                bottom: 25px;
+                width: 88%;
+            }
+        }
+
+        .appointment-form-area {
+            padding-left: 25px;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .appointment-section {
+        .appointment-form-area {
+            padding-left: 30px;
+        }
+
+        .google-map {
+            height: 550px;
         }
     }
 }

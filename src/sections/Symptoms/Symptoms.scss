@@ -1,29 +1,177 @@
 @import '../../sass/colors.scss';
 
 .symptoms-section {
-    margin-top: 150px;
-    background: #FADBE2;
+    padding: 100px 0;
+    background: var(--gradient-soft);
 
-    .section-title {
+    .symptoms-item {
+        background: var(--bg-white);
+        padding: 40px 30px;
         text-align: center;
+        margin-bottom: 30px;
+        border: 1px solid rgba(164, 40, 117, 0.08);
+        box-shadow: 0 4px 20px rgba(164, 40, 117, 0.08);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(164, 40, 117, 0.02), transparent);
+            transition: left 0.5s;
+        }
+
+        &:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(164, 40, 117, 0.15);
+            border-color: rgba(164, 40, 117, 0.15);
+
+            &::before {
+                left: 100%;
+            }
+
+            .symptoms-icon {
+                transform: scale(1.05);
+            }
+
+            h3 {
+                color: var(--primary-color);
+            }
+        }
+
+        .symptoms-icon {
+            margin-bottom: 25px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+            img {
+                max-width: 80px;
+                transition: all 0.3s ease;
+            }
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            line-height: 1.3;
+            transition: all 0.3s ease;
+        }
 
         p {
-            max-width: 700px;
-            margin: auto;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                color: var(--secondary-color);
+                transform: translateX(5px);
+            }
         }
     }
 
-}
+    .symptoms-title {
+        text-align: center;
+        margin-bottom: 50px;
 
-// Mobile Responsive
-@media (max-width:575px){
-    .symptoms-section {
-        margin-top: 50px;
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
     }
 }
 
-@media (min-width:576px) and (max-width: 767px){
+// Mobile Responsive
+@media (max-width: 575px) {
     .symptoms-section {
-        margin-top: 50px;
+        padding: 60px 0;
+
+        .symptoms-item {
+            padding: 30px 20px;
+            margin-bottom: 20px;
+
+            .symptoms-icon {
+                margin-bottom: 20px;
+
+                img {
+                    max-width: 60px;
+                }
+            }
+
+            h3 {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+
+            p {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .symptoms-title {
+            margin-bottom: 40px;
+
+            h2 {
+                margin-bottom: 15px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .symptoms-section {
+        padding: 70px 0;
+
+        .symptoms-item {
+            padding: 35px 25px;
+
+            .symptoms-icon img {
+                max-width: 70px;
+            }
+
+            h3 {
+                font-size: 19px;
+            }
+        }
+
+        .symptoms-title {
+            margin-bottom: 45px;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .symptoms-section {
+        padding: 80px 0;
     }
 }

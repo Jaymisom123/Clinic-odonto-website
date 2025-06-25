@@ -32,6 +32,29 @@ const Footer = () => {
         }
     ];
 
+    const footerServices = [
+        {
+            'name' : 'Ortodontia',
+            'link' : '/'
+        },
+        {
+            'name' : 'Implantes',
+            'link' : '/'
+        },
+        {
+            'name' : 'Lentes de Contato',
+            'link' : '/'
+        },
+        {
+            'name' : 'Clareamento',
+            'link' : '/'
+        },
+        {
+            'name' : 'Próteses',
+            'link' : '/'
+        }
+    ];
+
     const footerContacts = [
         {
             'title': 'Telefone Unidade Centro',
@@ -56,65 +79,83 @@ const Footer = () => {
     ]
 
     return (
-        <footer className='pt-100 pb-70'>
+        <footer className='footer-section'>
             <div className="container">
-                <div className="row">
-                    <div className="col-lg-6 col-md-5">
+                <div className="footer-content">
+                    <div className="footer-logo-section">
                         <div className="footer-logo">
                             <img src={logo} alt="logo" />
                         </div>
-                        <p>A Ferreira Matos Odontologia foca no atendimento acolhedor e humanizado, oferecendo um ambiente tranquilo para todos os pacientes em Catalão-GO</p>
+                        <div className="footer-description">
+                            A Ferreira Matos Odontologia foca no atendimento acolhedor e humanizado, oferecendo um ambiente tranquilo para todos os pacientes em Catalão-GO
+                        </div>
 
-                        <div className="social-logo">
-                            <p>Siga-nos nas redes</p>
-                            <ul>
-                                <li><a href="/"><FaFacebookF/></a></li>
-                                <li><a href="/"><FaTwitter/></a></li>
-                                <li><a href="/"><FaInstagram/></a></li>
-                            </ul>
+                        <div className="footer-social">
+                            <div className="social-title">Siga-nos nas redes</div>
+                            <div className="social-links">
+                                <a href="/"><FaFacebookF/></a>
+                                <a href="/"><FaTwitter/></a>
+                                <a href="/"><FaInstagram/></a>
+                            </div>
                         </div>
                     </div>
-                    <div className="col-lg-2 col-md-2">
-                        <div className="footer-link">
-                            <p>Links Rápidos</p>
-                            <ul>
-                                {
-                                    footerMenu.map(singleMenu => <li><Link to="/">{singleMenu.name}</Link></li>)
-                                }
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-5">
-                        <div className="footer-contact">
-                            <p>Contato & Informações</p>
 
+                    <div className="footer-links">
+                        <h4>Links Rápidos</h4>
+                        <ul>
                             {
-                                footerContacts.map(footerContact => {
-                                    return  <div className="contact-list">
-                                                <div className="contact-icon">
-                                                    <img src={footerContact.icon} alt="call" />
-                                                </div>
-                                                <div className="contact-text">
-                                                    <p>{footerContact.title}</p>
-                                                    <h5>{footerContact.info}</h5>
-                                                </div>
-                                            </div>
-                                })
+                                footerMenu.map((singleMenu, index) => (
+                                    <li key={index}>
+                                        <Link to={singleMenu.link}>{singleMenu.name}</Link>
+                                    </li>
+                                ))
                             }
-                        </div>
+                        </ul>
+                    </div>
+
+                    <div className="footer-services">
+                        <h4>Serviços</h4>
+                        <ul>
+                            {
+                                footerServices.map((service, index) => (
+                                    <li key={index}>
+                                        <Link to={service.link}>{service.name}</Link>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+
+                    <div className="footer-contact">
+                        <h4>Contato & Informações</h4>
+                        {
+                            footerContacts.map((footerContact, index) => (
+                                <div key={index} className="contact-item">
+                                    <div className="icon">
+                                        <img src={footerContact.icon} alt={footerContact.title} />
+                                    </div>
+                                    <div className="contact-text">
+                                        <div className="contact-label">{footerContact.title}</div>
+                                        <div className="contact-value">{footerContact.info}</div>
+                                    </div>
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
 
-                <div className="copyright-area">
-                    <div className='copy-text'>
-                        <p>&copy; Ferreira Matos Odontologia. Todos os Direitos Reservados</p>
-                    </div>  
-                    <div className='copy-links'>
-                        <ul>
-                            <li><Link to='/'>Termos de Uso</Link></li>
-                            <li><Link to='/'>Política de Privacidade</Link></li>
-                        </ul>
-                    </div>                          
+                <div className="footer-bottom">
+                    <div className="footer-bottom-content">
+                        <div className="copyright">
+                            &copy; <a href="/">Ferreira Matos Odontologia</a>. Todos os Direitos Reservados
+                        </div>  
+                        <div className="footer-bottom-links">
+                            <ul>
+                                <li><Link to='/'>Termos de Uso</Link></li>
+                                <li><Link to='/'>Política de Privacidade</Link></li>
+                            </ul>
+                        </div>                          
+                    </div>
                 </div>
             </div>
         </footer>

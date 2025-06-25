@@ -10,6 +10,14 @@
         z-index: 1;
         margin-bottom: 30px;
 
+        img {
+            transition: all 0.3s ease;
+            
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+
         &::before {
             position: absolute;
             content: "";
@@ -17,9 +25,9 @@
             height: 65%;
             top: -12%;
             left: 30%;
-            background: #DBEFFA;
+            background: linear-gradient(135deg, #DBEFFA, rgba(164, 40, 117, 0.1));
             z-index: -1;
-            border-radius: 20px;
+            transition: all 0.3s ease;
         }
     }
 
@@ -37,18 +45,36 @@
 
         .theme-btn {
             margin-top: 80px;
+
+            a {
+                padding: 18px 40px;
+                font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                white-space: nowrap;
+                min-width: 200px;
+                text-align: center;
+                background: var(--gradient);
+                box-shadow: 0 6px 20px rgba(164, 40, 117, 0.3);
+
+                &:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 10px 30px rgba(164, 40, 117, 0.4);
+                }
+            }
         }
     }
 }
 
-
 // Mobile Responsive
 @media (max-width: 575px) {
     .priority-section {
-        padding-bottom: 20px;
+        padding-bottom: 60px;
 
         .priority-img {
             margin-right: 0;
+            text-align: center;
 
             &::before {
                 display: none;
@@ -57,7 +83,13 @@
 
         .priority-text {
             .theme-btn {
-                margin-top: 20px;
+                margin-top: 30px;
+
+                a {
+                    padding: 15px 25px;
+                    font-size: 13px;
+                    min-width: 180px;
+                }
             }
         }
     }
@@ -78,12 +110,16 @@
 
         .priority-text {
             .theme-btn {
-                margin-top: 0;
+                margin-top: 40px;
+
+                a {
+                    padding: 16px 32px;
+                    font-size: 13px;
+                }
             }
         }
     }
 }
-
 
 // Medium Device Responsive
 @media (min-width: 768px) and (max-width: 991px) {
@@ -101,7 +137,7 @@
 
         .priority-text {
             .theme-btn {
-                margin-top: 0;
+                margin-top: 50px;
             }
         }
     }

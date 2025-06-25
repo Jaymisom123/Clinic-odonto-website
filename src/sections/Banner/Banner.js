@@ -13,6 +13,14 @@ const Banner = () => {
 
     return (
         <section className='section-bg section-common banner-section'>
+            {/* Video Background */}
+            <div className="video-background">
+                <video autoPlay muted loop className="background-video">
+                    <source src="/video-background.mp4" type="video/mp4" />
+                </video>
+                <div className="video-overlay"></div>
+            </div>
+
             <div className="d-table">
                 <div className="d-table-cell">
                     <div className="container">
